@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {View} from 'react-native'
-import MovieDetail from 'MovieDetail'
+import MovieDetail from './MovieDetail'
 
 export default class AlbumList extends React.Component {
     state = {movies: []};
