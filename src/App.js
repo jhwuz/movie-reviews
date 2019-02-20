@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import React from 'react';
 import {createStackNavigator, createAppContainer} from 'react-navigation'
 import HomeScreen from './HomeScreen'
 import MovieScreen from './MovieScreen'
@@ -7,10 +6,10 @@ import ReviewForm from './ReviewForm'
 import SearchForm from './SearchForm'
 
 const MainNavigator = createStackNavigator({
-  Home: {screen: HomeScreen},
-  Movies: {screen: MovieScreen},
-  Reviews: {screen: ReviewForm},
-  Search: {screen: SearchForm},
+    Home: {screen: HomeScreen},
+    Movies: {screen: MovieScreen},
+    Reviews: {screen: ReviewForm},
+    Search: {screen: SearchForm},
 });
 
 const App = createAppContainer(MainNavigator);

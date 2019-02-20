@@ -7,7 +7,7 @@ export default class HomeScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.header}>
-                    Movie Reviews
+                    Movie Reviews 🍿
                 </Text>
                 <Button title="View Movie Reviews"
                         onPress={() => navigate('Movies', {name: 'movies'})}
@@ -20,7 +20,7 @@ export default class HomeScreen extends React.Component {
                 />
             </View>
         );
-    }
+    };
 }
 
 const styles = StyleSheet.create({
@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#F8F8F8',
     },
     header: {
         fontSize: 45,
         fontWeight: 'bold',
     },
-})
+});
