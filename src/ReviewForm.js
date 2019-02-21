@@ -1,26 +1,29 @@
 import React from "react";
 import {Button, Text, StyleSheet, View, TextInput} from "react-native";
-import {Formik, Form, Field, FormikProps} from 'formik';
-import * as yup from 'yup'
-import {} from 'react-native-elements'
+import {Input} from 'react-native-elements'
 
 export default class ReviewForm extends React.Component {
-    handleSubmit = (values, {
-        props = this.props,
-        setSubmitting
-    }) => {
-        //process form submission here
-
-        //dont submitting, set submitting to false
-        setSubmitting(false);
-
-        return;
+    handleSubmit = () => {
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <Text>Review Form</Text>
+                <Input
+                    name='movieTitle'
+                    placeholder='Movie Title'
+                />
+                <Input
+                    name='rating'
+                    placeholder='Rating'
+                />
+                <Input style={styles.textBox}
+                       name='description'
+                       placeholder='Review Description'
+                       inputContainerStyle={{height: 200}}
+                       multiline
+                />
+                <Button title='Submit' onPress={this.handleSubmit}/>
 
             </View>
         );
@@ -38,4 +41,8 @@ const styles = StyleSheet.create({
         fontSize: 55,
         fontWeight: 'bold',
     },
+    textBox: {
+        height: 50,
+    }
+
 });
