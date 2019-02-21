@@ -11,7 +11,7 @@ export default class ReviewForm extends React.Component {
         return (
             <Formik
                 initialValues={{movieTitle: '', rating: '', description: ''}}
-                onSubmit={console.log(props.values)}
+                onSubmit={console.log()}
             >
                 {props => (
                     <View style={styles.container}>
