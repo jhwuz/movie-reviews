@@ -1,6 +1,7 @@
 import React from "react";
 import {Button, Text, StyleSheet, View, TextInput} from "react-native";
 import {Input} from 'react-native-elements'
+import {Formik} from 'formik'
 
 export default class ReviewForm extends React.Component {
     handleSubmit = () => {
@@ -9,18 +10,17 @@ export default class ReviewForm extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Input
-                    name='movieTitle'
-                    placeholder='Movie Title'
+                <Formik
+                    initialValues={{movieTitle: '', rating: '', description: ''}}
+                    onSubmit={this.handleSubmit}
+
+
                 />
-                <Input
-                    name='rating'
-                    placeholder='Rating'
-                />
-                <Input style={styles.textBox}
-                       name='description'
-                       placeholder='Review Description'
-                       inputContainerStyle={{height: 200}}
+
+                <Input name='movieTitle' placeholder='Movie title'/>
+                <Input name='rating' placeholder='Rating'/>
+                <Input name='description'
+                       placeholder='Write your review here'
                        multiline
                 />
                 <Button title='Submit' onPress={this.handleSubmit}/>
@@ -43,6 +43,11 @@ const styles = StyleSheet.create({
     },
     textBox: {
         height: 50,
+        justifyContent: 'flex-start'
+    },
+    button: {
+        marginTop: 20,
+        width: '100%',
     }
 
 });

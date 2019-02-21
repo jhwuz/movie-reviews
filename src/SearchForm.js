@@ -1,10 +1,14 @@
 import React from "react";
 import {Button, Text, StyleSheet, View} from "react-native";
+import {Input} from 'react-native-elements'
 
 export default class ReviewForm extends React.Component {
     render() {
         return (
-            <Text>Search Form</Text>
+            <View style={styles.container}>
+                <Input name='search' placeholder='Enter a movie title'/>
+                <Button title='Search' onPress={this.handleSubmit}/>
+            </View>
         );
     }
 }
