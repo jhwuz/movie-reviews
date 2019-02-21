@@ -1,40 +1,52 @@
 import React from "react";
-import {Button, Text, StyleSheet, View, TextInput} from "react-native";
-import {Input} from 'react-native-elements'
+import {Button, StyleSheet, View, TextInput, Text} from "react-native";
 import {Formik} from 'formik'
 
 export default class ReviewForm extends React.Component {
-    handleSubmit = () => {
+    handleSubmit = (props) => {
+        //submit to server here
     }
 
     render() {
         return (
-            <View style={styles.container}>
-                <Formik
-                    initialValues={{movieTitle: '', rating: '', description: ''}}
-                    onSubmit={this.handleSubmit}
-
-
-                />
-
-                <Input name='movieTitle' placeholder='Movie title'/>
-                <Input name='rating' placeholder='Rating'/>
-                <Input name='description'
-                       placeholder='Write your review here'
-                       multiline
-                />
-                <Button title='Submit' onPress={this.handleSubmit}/>
-
-            </View>
+            <Formik
+                initialValues={{movieTitle: '', rating: '', description: ''}}
+                onSubmit={console.log(props.values)}
+            >
+                {props => (
+                    <View style={styles.container}>
+                        <TextInput style={styles.textField}
+                            onChangeText={props.handleChange('movieTitle')}
+                            onBlur={props.handleBlur('movieTitle')}
+                            value={props.values.movieTitle}
+                            placeholder="Movie Title"
+                        />
+                        <TextInput style={styles.textField}
+                            onChangeText={props.handleChange('rating')}
+                            onBlur={props.handleBlur('rating')}
+                            value={props.values.rating}
+                            placeholder="Rating (1 - 10)"
+                        />
+                        <TextInput style={styles.textBox}
+                            onChangeText={props.handleChange('description')}
+                            onBlur={props.handleBlur('description')}
+                            value={props.values.description}
+                            placeholder="Write your description here"
+                            multiline={true}
+                        />
+                        <Button title='Submit' onPress={props.handleSubmit}/>
+                    </View>
+                )}
+            </Formik>
         );
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center',
         backgroundColor: '#445566',
     },
     header: {
@@ -42,8 +54,15 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     textBox: {
-        height: 50,
-        justifyContent: 'flex-start'
+        fontSize: 24,
+        justifyContent: 'center',
+        marginBottom: 10,
+    },
+    textField: {
+        fontSize: 24,
+        justifyContent: 'center',
+        marginBottom: 10,
+        padding: 10,
     },
     button: {
         marginTop: 20,
