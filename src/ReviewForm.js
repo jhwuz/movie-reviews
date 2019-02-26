@@ -3,15 +3,15 @@ import {Button, StyleSheet, View, TextInput, Text} from "react-native";
 import {Formik} from 'formik'
 
 export default class ReviewForm extends React.Component {
-    handleSubmit = (props) => {
-        //submit to server here
+    handleSubmit(values){
+        console.log(values)
     }
 
     render() {
         return (
             <Formik
                 initialValues={{movieTitle: '', rating: '', description: ''}}
-                onSubmit={console.log()}
+                onSubmit={values => this.handleSubmit(values)}
             >
                 {props => (
                     <View style={styles.container}>
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#445566',
+        ...StyleSheet.absoluteFillObject,
     },
     header: {
         fontSize: 55,
@@ -57,6 +58,7 @@ const styles = StyleSheet.create({
         fontSize: 24,
         justifyContent: 'center',
         marginBottom: 10,
+        padding: 10,
     },
     textField: {
         fontSize: 24,

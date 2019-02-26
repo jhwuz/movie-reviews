@@ -11,7 +11,7 @@ const MovieCard = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        borderWidth: 1,
+        borderWidth: 2,
         borderRadius: 2,
         borderColor: '#ddd',
         shadowColor: '#000',
@@ -22,7 +22,9 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         marginRight: 5,
         marginTop: 10,
+        marginBottom: 3,
         backgroundColor: '#445566',
+        padding: 5,
     },
 });
 

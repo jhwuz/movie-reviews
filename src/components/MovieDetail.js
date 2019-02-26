@@ -1,16 +1,28 @@
 import React from 'react'
-import {View, Text} from 'react-native'
+import {View, Text, StyleSheet} from 'react-native'
 import MovieCard from './MovieCard'
 
 const MovieDetail = (props) => {
     return (
         <View>
             <MovieCard>
-                <Text>{props.movie.title}</Text>
-                <Text>{props.movie.description}</Text>
+                <Text style={styles.header}>{props.movie.title}</Text>
+                <Text style={styles.rating}>Rating: {props.movie.rating} </Text>
+                <Text>Description: {props.movie.description}</Text>
             </MovieCard>
         </View>
     );
 }
 
 export default MovieDetail
+
+const styles = StyleSheet.create({
+    header: {
+        fontSize: 25,
+        fontWeight: 'bold',
+    },
+    rating: {
+        fontSize: 20,
+    },
+
+});
