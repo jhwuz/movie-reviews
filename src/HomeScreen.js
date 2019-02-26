@@ -9,10 +9,6 @@ export default class HomeScreen extends React.Component {
                 <Text style={styles.header}>
                     Movie Reviews 🍿
                 </Text>
-                <TouchableOpacity style={styles.button} title="View Movie Reviews"
-                        onPress={() => navigate('Movies', {name: 'movies'})}>
-                    <Text>View Movie Reviews</Text>
-                </TouchableOpacity>
                 <Button title="View Movie Reviews"
                         onPress={() => navigate('Movies', {name: 'movies'})}
                 />
