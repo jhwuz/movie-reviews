@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Text, StyleSheet, View, TouchableOpacity} from "react-native";
+import {Button, Text, StyleSheet, View, TouchableOpacity, TextInput} from "react-native";
 
 export default class HomeScreen extends React.Component {
     render() {
@@ -28,11 +28,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: '#445566',
+        backgroundColor: '#14171C',
     },
     header: {
         fontSize: 45,
         fontWeight: 'bold',
+        color: '#959C9E'
     },
     textContainer: {
         flex: 1,
@@ -44,6 +45,5 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: 'black',
         justifyContent: 'center',
-        backgroundColor: '#515766'
     }
 });
