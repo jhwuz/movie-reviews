@@ -6,14 +6,24 @@ import ReviewForm from './ReviewForm'
 import SearchForm from './SearchForm'
 
 const MainNavigator = createStackNavigator({
-    Home: {screen: HomeScreen},
-    Movies: {screen: MovieScreen},
-    Reviews: {screen: ReviewForm},
-    Search: {screen: SearchForm},
-});
+        Home: {screen: HomeScreen},
+        Movies: {screen: MovieScreen},
+        Reviews: {screen: ReviewForm},
+        Search: {screen: SearchForm},
+    },
+    {
+        defaultNavigationOptions: {
+            initialRouteName: 'Home',
+            headerStyle: {
+                backgroundColor: '#445566',
+                borderBottomWidth: 0,
+            },
+
+        }
+    }
+);
 
 const App = createAppContainer(MainNavigator);
 
 export default App;
-
 

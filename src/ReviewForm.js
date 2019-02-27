@@ -4,7 +4,8 @@ import {Formik} from 'formik'
 
 export default class ReviewForm extends React.Component {
     handleSubmit(values){
-        console.log(values)
+        console.log(JSON.stringify(values))
+        //make post request here
     }
 
     render() {
@@ -46,7 +47,7 @@ export default class ReviewForm extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         backgroundColor: '#445566',
         ...StyleSheet.absoluteFillObject,
     },
