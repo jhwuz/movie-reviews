@@ -7,8 +7,8 @@ const SignupSchema = Yup.object().shape({
     movieTitle: Yup.string()
         .required('Required'),
     rating: Yup.number()
-        .min(1, 'Choose a number 1-10')
-        .max(10, 'Choose a number 1-10')
+        .min(0, 'Choose a number 0-5')
+        .max(5, 'Choose a number 0-5')
         .required('Required'),
     description: Yup.string()
         .required('Required')
@@ -23,13 +23,15 @@ export default class ReviewForm extends React.Component {
 
     render() {
         return (
+
+
             <Formik
                 initialValues={{movieTitle: '', rating: '', description: ''}}
                 onSubmit={values => this.handleSubmit(values)}
                 validationSchema={SignupSchema}
             >
-                {/*{({props, error, touched}) */}
-                {props => (
+                {/*{({props, touched, errors }) => (*/}
+                 {props => (
                     <View style={styles.container}>
                         <TextInput style={styles.textField}
                                    onChangeText={props.handleChange('movieTitle')}
@@ -45,7 +47,7 @@ export default class ReviewForm extends React.Component {
                                    onChangeText={props.handleChange('rating')}
                                    onBlur={props.handleBlur('rating')}
                                    value={props.values.rating}
-                                   placeholder="Rating (1 - 10)"
+                                   placeholder="Rating (0-5)"
                                    placeholderTextColor='#868B82'
                         />
                         <TextInput style={styles.textBox}

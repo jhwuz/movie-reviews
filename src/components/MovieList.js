@@ -9,7 +9,7 @@ export default class AlbumList extends React.Component {
                 {
                     id: 1,
                     title: "Avengers",
-                    rating: 8,
+                    rating: 3.5,
                     description: "good movie aweofijawoei fjaoe faie fowje fawej foaij ewofajweofjaoewfjaw eofja owejfoa joefjow ejfoajweof j" +
                         "aoewijfaowe faoiwe jfoawj efoajewof jo j"
                 },
@@ -74,12 +74,13 @@ export default class AlbumList extends React.Component {
     componentDidMount() {
         this.dummyRequest()
         //fetch data from api here
-        // return fetch('https://localhost:8000/')
+        // return fetch('https://localhost:8000/getReviews')
         //     .then((response) => response.json())
         //     .then((responseJson) => {
         //
         //         this.setState({
         //             //set movie list here
+        //
         //         }, function () {
         //
         //         });
