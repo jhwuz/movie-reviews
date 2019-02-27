@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Text, StyleSheet, View, TouchableOpacity, TextInput} from "react-native";
+import {Button, Text, StyleSheet, View, TouchableHighlight} from "react-native";
 
 export default class HomeScreen extends React.Component {
     render() {
@@ -18,6 +18,9 @@ export default class HomeScreen extends React.Component {
                 <Button title="Search for a Movie"
                         onPress={() => navigate('Search', {name: 'search'})}
                 />
+                {/*<TouchableHighlight onPress={() => navigate('Search', {name: 'search'})}>*/}
+                    {/*<Text style={styles.button}>Search</Text>*/}
+                {/*</TouchableHighlight>*/}
             </View>
         );
     }
@@ -33,7 +36,7 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 45,
         fontWeight: 'bold',
-        color: '#959C9E'
+        color: '#868B82'
     },
     textContainer: {
         flex: 1,
@@ -41,9 +44,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around'
     },
     button: {
-        flexDirection: 'column',
-        borderWidth: 1,
-        borderColor: 'black',
-        justifyContent: 'center',
+        fontSize: 25,
+        color: 'white'
     }
 });

@@ -16,7 +16,7 @@ export default class ReviewForm extends React.Component {
                                    onBlur={props.handleBlur('movieTitle')}
                                    value={props.values.movieTitle}
                                    placeholder="Search"
-                                   placeholderTextColor='#4b5254'
+                                   placeholderTextColor='#868B82'
                         />
                         <Button title='Submit' onPress={props.handleSubmit}/>
                     </View>
@@ -38,10 +38,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     textField: {
-        fontSize: 24,
+        fontSize: 35,
         justifyContent: 'center',
         marginBottom: 10,
         padding: 10,
-        color: '#959C9E'
+        color: 'white'
     },
 });

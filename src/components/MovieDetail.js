@@ -8,7 +8,7 @@ const MovieDetail = (props) => {
             <MovieCard>
                 <Text style={styles.header}>{props.movie.title}</Text>
                 <Text style={styles.rating}>Rating: {props.movie.rating} </Text>
-                <Text>Description: {props.movie.description}</Text>
+                <Text style={styles.description}>Description: {props.movie.description}</Text>
             </MovieCard>
         </View>
     );
@@ -18,11 +18,16 @@ export default MovieDetail
 
 const styles = StyleSheet.create({
     header: {
-        fontSize: 25,
+        fontSize: 22,
         fontWeight: 'bold',
+        color: '#868B82',
     },
     rating: {
-        fontSize: 20,
+        fontSize: 18,
+        color: '#868B82',
     },
+    description: {
+        color: '#868B82'
+    }
 
 });
