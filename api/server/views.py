@@ -12,17 +12,19 @@ def index(request):
 
 
 class ReviewViewSet(viewsets.ModelViewSet):
+    queryset = MovieReview.objects.all()
+    serializer_class = MovieSerializer
 
-    def list(self, request):
-        queryset = MovieReview.objects.all()
-        serializer = MovieSerializer(queryset, many=True)
-        return Response(serializer.data)
-
-    def retrieve(self, request, pk=None):
-        queryset = User.objects.all()
-        user = get_object_or_404(queryset, pk=pk)
-        serializer = UserSerializer(user)
-        return Response(serializer.data)
+    # def list(self, request):
+    #     queryset = MovieReview.objects.all()
+    #     serializer = MovieSerializer(queryset, many=True)
+    #     return Response(serializer.data)
+    #
+    # def retrieve(self, request, pk=None):
+    #     queryset = User.objects.all()
+    #     movie = get_object_or_404(queryset, pk=pk)
+    #     serializer = MovieSerializer(movie)
+    #     return Response(serializer.data)
 
 
 def get_reviews(request):
