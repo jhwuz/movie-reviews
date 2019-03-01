@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     textField: {
-        fontSize: 35,
+        fontSize: 25,
         justifyContent: 'center',
         marginBottom: 10,
         padding: 10,

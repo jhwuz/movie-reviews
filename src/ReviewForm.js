@@ -17,21 +17,29 @@ const SignupSchema = Yup.object().shape({
 
 export default class ReviewForm extends React.Component {
     handleSubmit(values) {
-        console.log(JSON.stringify(values))
-        //make post request here
+        fetch('http://localhost:8000/server/reviews/', {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                title: values.movieTitle,
+                rating: values.rating,
+                description: values.description
+            }),
+        });
     }
 
     render() {
         return (
-
-
             <Formik
                 initialValues={{movieTitle: '', rating: '', description: ''}}
                 onSubmit={values => this.handleSubmit(values)}
                 validationSchema={SignupSchema}
             >
                 {/*{({props, touched, errors }) => (*/}
-                 {props => (
+                {props => (
                     <View style={styles.container}>
                         <TextInput style={styles.textField}
                                    onChangeText={props.handleChange('movieTitle')}
@@ -41,7 +49,7 @@ export default class ReviewForm extends React.Component {
                                    placeholderTextColor='#868B82'
                         />
                         {/*{errors.movieTitle && touched.movieTitle ? (*/}
-                            {/*<View>{errors.movieTitle}</View>*/}
+                        {/*<View>{errors.movieTitle}</View>*/}
                         {/*) : null}*/}
                         <TextInput style={styles.textField}
                                    onChangeText={props.handleChange('rating')}
@@ -79,14 +87,14 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     textBox: {
-        fontSize: 15,
+        fontSize: 18,
         justifyContent: 'center',
         marginBottom: 10,
         padding: 10,
         color: 'white',
     },
     textField: {
-        fontSize: 15,
+        fontSize: 18,
         justifyContent: 'center',
         marginBottom: 10,
         padding: 10,

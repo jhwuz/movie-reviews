@@ -14,8 +14,10 @@ const MovieDetail = (props) => {
                     emptyStarColor={'grey'}
                     starSize={20}
                     containerStyle={{
-                        width: '25%'
+                        width: '25%',
+                        marginBottom: 5,
                     }}
+                    disabled={true}
                 />
                 <Text style={styles.description}>Description: {props.movie.description}</Text>
             </MovieCard>
@@ -30,12 +32,11 @@ const styles = StyleSheet.create({
         fontSize: 22,
         fontWeight: 'bold',
         color: 'white',
-    },
-    rating: {
-        width: 5
+        marginBottom: 5,
     },
     description: {
-        color: '#868B82'
+        color: '#868B82',
+        marginBottom: 3,
     }
 
 });
