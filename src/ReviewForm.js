@@ -17,6 +17,7 @@ const SignupSchema = Yup.object().shape({
 
 export default class ReviewForm extends React.Component {
     handleSubmit(values) {
+        console.log(JSON.stringify(values))
         fetch('http://localhost:8000/server/reviews/', {
             method: 'POST',
             headers: {
@@ -35,10 +36,9 @@ export default class ReviewForm extends React.Component {
         return (
             <Formik
                 initialValues={{movieTitle: '', rating: '', description: ''}}
-                onSubmit={values => this.handleSubmit(values)}
+                onSubmit={values => console.log(values)}
                 validationSchema={SignupSchema}
             >
-                {/*{({props, touched, errors }) => (*/}
                 {props => (
                     <View style={styles.container}>
                         <TextInput style={styles.textField}
@@ -48,8 +48,8 @@ export default class ReviewForm extends React.Component {
                                    placeholder="Movie Title"
                                    placeholderTextColor='#868B82'
                         />
-                        {/*{errors.movieTitle && touched.movieTitle ? (*/}
-                        {/*<View>{errors.movieTitle}</View>*/}
+                        {/*{props.errors.movieTitle == 1 && props.touched.movieTitle == 1 ? (*/}
+                        {/*<View>{props.errors.movieTitle}</View>*/}
                         {/*) : null}*/}
                         <TextInput style={styles.textField}
                                    onChangeText={props.handleChange('rating')}
@@ -58,6 +58,9 @@ export default class ReviewForm extends React.Component {
                                    placeholder="Rating (0-5)"
                                    placeholderTextColor='#868B82'
                         />
+                        {/*{props.errors.rating && props.touched.rating ? (*/}
+                            {/*<div>{props.errors.rating}</div>*/}
+                        {/*) : null}*/}
                         <TextInput style={styles.textBox}
                                    onChangeText={props.handleChange('description')}
                                    onBlur={props.handleBlur('description')}

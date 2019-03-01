@@ -9,3 +9,4 @@ from django.shortcuts import get_object_or_404
 class ReviewViewSet(viewsets.ModelViewSet):
     queryset = MovieReview.objects.all()
     serializer_class = MovieSerializer
+
