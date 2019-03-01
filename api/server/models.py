@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class MovieReview(models.Model):
-    movieID = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     title = models.TextField(max_length=50)
     rating = models.IntegerField()
     description = models.TextField()
@@ -11,5 +11,5 @@ class MovieReview(models.Model):
 
 
 class User(models.Model):
-    userID = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     username = models.CharField(max_length=50)
