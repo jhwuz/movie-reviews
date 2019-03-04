@@ -12,19 +12,19 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
     @action(methods=['post'], detail=False, url_path='search')
     def search(self, request):
-        search = self.get_queryset().filter(title=request.query_params.get('title'))
-        serializer = self.get_serializer_class()(search)
+        search = self.get_queryset().filter(title=request.data.get('title'))
+        serializer = self.get_serializer_class()(search, many=True)
         return Response(serializer.data)
 
     @action(methods=['get'], detail=False, url_path='test')
     def test(self, request):
-        test = self.get_queryset()
-        serializer = self.get_serializer_class()(test)
+        test = self.get_queryset().order_by('-id')
+        serializer = self.get_serializer_class()(test, many=True)
         return Response(serializer.data)
 
     @action(methods=['get'], detail=False, url_path='avg')
     def avg(self, request):
         data = self.get_queryset().aggregate(Avg('rating'))
-        serializer = self.get_serializer_class()(data)
+        serializer = self.get_serializer_class()(data, many=True)
         return Response(serializer.data)
 
