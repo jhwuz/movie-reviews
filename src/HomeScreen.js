@@ -18,9 +18,6 @@ export default class HomeScreen extends React.Component {
                 <Button title="Search for a Movie"
                         onPress={() => navigate('Search', {name: 'search'})}
                 />
-                {/*<TouchableHighlight onPress={() => navigate('Search', {name: 'search'})}>*/}
-                    {/*<Text style={styles.button}>Search</Text>*/}
-                {/*</TouchableHighlight>*/}
             </View>
         );
     }

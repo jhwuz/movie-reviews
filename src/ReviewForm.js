@@ -1,23 +1,23 @@
 import React from "react";
-import {Button, StyleSheet, View, TextInput} from "react-native";
+import {Button, StyleSheet, View, TextInput, Alert} from "react-native";
 import {Formik} from 'formik'
 import * as Yup from 'yup'
+import {Text} from "react-native-elements";
 
 const SignupSchema = Yup.object().shape({
     movieTitle: Yup.string()
         .required('Required'),
     rating: Yup.number()
-        .min(0, 'Choose a number 0-5')
-        .max(5, 'Choose a number 0-5')
+        .min(0, 'Choose a number between 0 and 5')
+        .max(5, 'Choose a number between 0 and 5')
         .required('Required'),
     description: Yup.string()
         .required('Required')
-        .min(10, 'Too short'),
+        .min(10, 'Please enter at least 10 characters'),
 })
 
 export default class ReviewForm extends React.Component {
     handleSubmit(values) {
-        console.log(JSON.stringify(values))
         fetch('http://localhost:8000/server/reviews/', {
             method: 'POST',
             headers: {
@@ -30,13 +30,17 @@ export default class ReviewForm extends React.Component {
                 description: values.description
             }),
         });
+        Alert.alert(
+            '',
+            'Review Submitted'
+        );
     }
 
     render() {
         return (
             <Formik
                 initialValues={{movieTitle: '', rating: '', description: ''}}
-                onSubmit={values => console.log(values)}
+                onSubmit={values => this.handleSubmit(values)}
                 validationSchema={SignupSchema}
             >
                 {props => (
@@ -48,9 +52,9 @@ export default class ReviewForm extends React.Component {
                                    placeholder="Movie Title"
                                    placeholderTextColor='#868B82'
                         />
-                        {/*{props.errors.movieTitle == 1 && props.touched.movieTitle == 1 ? (*/}
-                        {/*<View>{props.errors.movieTitle}</View>*/}
-                        {/*) : null}*/}
+                        {props.errors.movieTitle && props.touched.movieTitle ? (
+                            <Text style={styles.error}>{props.errors.movieTitle}</Text>
+                        ) : null}
                         <TextInput style={styles.textField}
                                    onChangeText={props.handleChange('rating')}
                                    onBlur={props.handleBlur('rating')}
@@ -58,9 +62,9 @@ export default class ReviewForm extends React.Component {
                                    placeholder="Rating (0-5)"
                                    placeholderTextColor='#868B82'
                         />
-                        {/*{props.errors.rating && props.touched.rating ? (*/}
-                            {/*<div>{props.errors.rating}</div>*/}
-                        {/*) : null}*/}
+                        {props.errors.rating && props.touched.rating ? (
+                            <Text style={styles.error}>{props.errors.rating}</Text>
+                        ) : null}
                         <TextInput style={styles.textBox}
                                    onChangeText={props.handleChange('description')}
                                    onBlur={props.handleBlur('description')}
@@ -69,6 +73,9 @@ export default class ReviewForm extends React.Component {
                                    placeholderTextColor='#868B82'
                                    multiline={true}
                         />
+                        {props.errors.description && props.touched.description ? (
+                            <Text style={styles.error}>{props.errors.description}</Text>
+                        ) : null}
                         <Button title='Submit' onPress={props.handleSubmit}/>
                     </View>
                 )}
@@ -92,20 +99,25 @@ const styles = StyleSheet.create({
     textBox: {
         fontSize: 18,
         justifyContent: 'center',
-        marginBottom: 10,
+        marginBottom: 5,
         padding: 10,
         color: 'white',
     },
     textField: {
         fontSize: 18,
         justifyContent: 'center',
-        marginBottom: 10,
+        marginBottom: 3,
         padding: 10,
         color: 'white',
     },
     button: {
         marginTop: 20,
         width: '100%',
+    },
+    error: {
+        fontSize: 14,
+        color: 'red',
+        paddingLeft: 10,
     }
 
 });

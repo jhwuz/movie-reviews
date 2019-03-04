@@ -4,12 +4,14 @@ import HomeScreen from './HomeScreen'
 import MovieScreen from './MovieScreen'
 import ReviewForm from './ReviewForm'
 import SearchForm from './SearchForm'
+import SearchScreen from "./SearchScreen";
 
 const MainNavigator = createStackNavigator({
         Home: {screen: HomeScreen},
         Movies: {screen: MovieScreen},
         Reviews: {screen: ReviewForm},
         Search: {screen: SearchForm},
+        SearchScreen: {screen: SearchScreen},
     },
     {
         defaultNavigationOptions: {
