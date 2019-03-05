@@ -5,25 +5,14 @@ import SearchScreen from "./SearchScreen";
 
 export default class SearchForm extends React.Component {
     handleSubmit(values) {
-        fetch('http://localhost:8000/server/reviews/', {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                title: values.movieTitle,
-                rating: values.rating,
-                description: values.description
-            }),
-        });
+        const {navigate} = this.props.navigation;
         Alert.alert(
             '',
             'Press OK to view search results',
             [{
                 text: 'OK',
                 onPress: () => {
-                    this.props.navigation.navigate('SearchScreen', {name: SearchScreen});
+                    navigate('SearchScreen', {title: values.movieTitle});
                 }
             }]
         );

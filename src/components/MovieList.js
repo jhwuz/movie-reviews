@@ -8,40 +8,30 @@ export default class AlbumList extends React.Component {
     state = {movies: []};
 
     componentDidMount() {
-        // axios.get('http://localhost:8000/server/reviews/')
-        //     .then(response => {
-        //         this.setState({
-        //             movies: response
-        //         })
-        //     });
-        // this.renderMovies();
-        return fetch('http://localhost:8000/server/reviews/')
-            .then((response) => response.json())
-            .then((responseJson) => {
-
+        axios.get('http://localhost:8000/server/reviews/newest')
+            .then(response => {
                 this.setState({
-                    movies: responseJson
-                }, function () {
-                    this.renderMovies();
-                });
-
+                    movies: response.data
+                })
             })
-            .catch((error) => {
-                console.error(error);
-            });
-    }
+            .catch(function (error) {
+                console.log(error);
+                this.renderMovies();
+            })}
 
-    renderMovies() {
-        return this.state.movies.map(movie =>
-            <MovieDetail key={movie.id} movie={movie}/> //pass down movie as prop
-        );
-    }
+        renderMovies()
+        {
+            return this.state.movies.map(movie =>
+                <MovieDetail key={movie.id} movie={movie}/> //pass down movie as prop
+            );
+        }
 
-    render() {
-        return (
-            <ScrollView>
-                {this.renderMovies()}
-            </ScrollView>
-        );
+        render()
+        {
+            return (
+                <ScrollView>
+                    {this.renderMovies()}
+                </ScrollView>
+            );
+        }
     }
-}

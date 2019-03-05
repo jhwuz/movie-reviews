@@ -1,8 +1,8 @@
 import React from "react";
-import {Button, StyleSheet, View, TextInput, Alert} from "react-native";
+import {Button, StyleSheet, View, TextInput, Alert, Text} from "react-native";
 import {Formik} from 'formik'
 import * as Yup from 'yup'
-import {Text} from "react-native-elements";
+import axios from 'axios'
 
 const SignupSchema = Yup.object().shape({
     movieTitle: Yup.string()
@@ -18,18 +18,16 @@ const SignupSchema = Yup.object().shape({
 
 export default class ReviewForm extends React.Component {
     handleSubmit(values) {
-        fetch('http://localhost:8000/server/reviews/', {
-            method: 'POST',
-            headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
+        axios.post('http://localhost:8000/server/reviews/',
+            {
                 title: values.movieTitle,
                 rating: values.rating,
                 description: values.description
-            }),
+            }
+        ).catch(function (error) {
+            console.log(error);
         });
+
         Alert.alert(
             '',
             'Review Submitted'
@@ -100,15 +98,24 @@ const styles = StyleSheet.create({
         fontSize: 18,
         justifyContent: 'center',
         marginBottom: 5,
+        marginLeft: 5,
+        marginRight: 5,
         padding: 10,
         color: 'white',
+        height: 200,
+        borderWidth: 1,
+        borderColor: '#868B82',
     },
     textField: {
         fontSize: 18,
         justifyContent: 'center',
         marginBottom: 3,
+        marginLeft: 5,
+        marginRight: 5,
         padding: 10,
         color: 'white',
+        borderWidth: 1,
+        borderColor: '#868B82',
     },
     button: {
         marginTop: 20,
@@ -118,6 +125,5 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: 'red',
         paddingLeft: 10,
-    }
-
+    },
 });

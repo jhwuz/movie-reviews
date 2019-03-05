@@ -12,11 +12,11 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
     @action(methods=['post'], detail=False, url_path='search')
     def search(self, request):
-        search = self.get_queryset().filter(title=request.data.get('title'))
+        search = self.get_queryset().filter(title__icontains=request.data.get('title'))
         serializer = self.get_serializer_class()(search, many=True)
         return Response(serializer.data)
 
-    @action(methods=['get'], detail=False, url_path='test')
+    @action(methods=['get'], detail=False, url_path='newest')
     def test(self, request):
         test = self.get_queryset().order_by('-id')
         serializer = self.get_serializer_class()(test, many=True)
