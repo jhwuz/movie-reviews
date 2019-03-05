@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, View} from "react-native";
-import SearchList from "./components/SearchList";
+import SearchList from "./SearchList";
 
 export default class SearchScreen extends React.Component {
     render() {

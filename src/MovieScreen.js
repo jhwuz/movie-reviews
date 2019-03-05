@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, StyleSheet, View} from "react-native";
+import { StyleSheet, View} from "react-native";
 import MovieList from './components/MovieList'
 
 export default class MovieScreen extends React.Component {

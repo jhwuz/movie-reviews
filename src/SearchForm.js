@@ -1,11 +1,12 @@
 import React from "react";
-import {Button, Text, StyleSheet, View, TextInput, Alert} from "react-native";
+import {Button, StyleSheet, View, TextInput, Alert} from "react-native";
 import {Formik} from "formik";
 import SearchScreen from "./SearchScreen";
 
 export default class SearchForm extends React.Component {
     handleSubmit(values) {
         const {navigate} = this.props.navigation;
+        console.log(this.props)
         Alert.alert(
             '',
             'Press OK to view search results',
@@ -44,9 +45,9 @@ export default class SearchForm extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'flex-start',
         backgroundColor: '#14171C',
+        ...StyleSheet.absoluteFillObject,
     },
     header: {
         fontSize: 55,
@@ -55,8 +56,10 @@ const styles = StyleSheet.create({
     textField: {
         fontSize: 25,
         justifyContent: 'center',
-        marginBottom: 10,
+        margin: 10,
         padding: 10,
-        color: 'white'
+        color: 'white',
+        borderWidth: 1,
+        borderColor: '#868B82',
     },
 });

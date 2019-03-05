@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c647d69-17bc-4654-82aa-824283cac958" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../src/components/ExpandedMovie.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/HomeScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/HomeScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/MovieScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/MovieScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/ReviewForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/ReviewForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/SearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/SearchForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/MovieCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/MovieCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/MovieDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/MovieDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../src/components/MovieList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/MovieList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../src/components/SearchList.js" beforeDir="false" afterPath="$PROJECT_DIR$/../src/components/SearchList.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+            <state relative-caret-position="300">
+              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding>
                 <element signature="e#1#36#0" expanded="true" />
               </folding>
@@ -93,7 +101,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/__init__.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -233,12 +241,12 @@
       <workItem from="1550779130955" duration="1791000" />
       <workItem from="1551223367237" duration="200000" />
       <workItem from="1551232770362" duration="8346000" />
-      <workItem from="1551473944592" duration="12334000" />
+      <workItem from="1551473944592" duration="13369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22671000" />
+    <option name="totallyTimeSpent" value="23706000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -258,7 +266,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32891566" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -267,7 +275,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32891566" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.28554216" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.28554216" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -335,16 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/lib/python3.7/site-packages/rest_framework/routers.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
@@ -352,19 +350,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/server/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/views.py">
+    <entry file="file://$PROJECT_DIR$/server/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="59" selection-start-line="18" selection-start-column="59" selection-end-line="18" selection-end-column="59" />
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
-            <element signature="e#1#36#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -392,11 +386,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/server/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding>
+            <element signature="e#1#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

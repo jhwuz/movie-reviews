@@ -1,10 +1,11 @@
 import React from 'react';
 import {createStackNavigator, createAppContainer} from 'react-navigation'
-import HomeScreen from './HomeScreen'
-import MovieScreen from './MovieScreen'
-import ReviewForm from './ReviewForm'
-import SearchForm from './SearchForm'
+import HomeScreen from './HomeScreen';
+import MovieScreen from './MovieScreen';
+import ReviewForm from './ReviewForm';
+import SearchForm from './SearchForm';
 import SearchScreen from "./SearchScreen";
+import ExpandedMovie from './components/ExpandedMovie';
 
 const MainNavigator = createStackNavigator({
         Home: {screen: HomeScreen},
@@ -12,6 +13,7 @@ const MainNavigator = createStackNavigator({
         Reviews: {screen: ReviewForm},
         Search: {screen: SearchForm},
         SearchScreen: {screen: SearchScreen},
+        ExpandedMovie: {screen: ExpandedMovie},
     },
     {
         defaultNavigationOptions: {
