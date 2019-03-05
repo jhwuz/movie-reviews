@@ -25,6 +25,5 @@ class ReviewViewSet(viewsets.ModelViewSet):
     @action(methods=['get'], detail=False, url_path='avg')
     def avg(self, request):
         data = self.get_queryset().aggregate(Avg('rating'))
-        serializer = self.get_serializer_class()(data, many=True)
-        return Response(serializer.data)
+        return Response(data)
 
