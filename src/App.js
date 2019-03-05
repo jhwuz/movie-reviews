@@ -4,7 +4,7 @@ import HomeScreen from './HomeScreen';
 import MovieScreen from './MovieScreen';
 import ReviewForm from './ReviewForm';
 import SearchForm from './SearchForm';
-import SearchScreen from "./SearchScreen";
+import SearchList from "./components/SearchList";
 import ExpandedMovie from './components/ExpandedMovie';
 
 const MainNavigator = createStackNavigator({
@@ -12,7 +12,7 @@ const MainNavigator = createStackNavigator({
         Movies: {screen: MovieScreen},
         Reviews: {screen: ReviewForm},
         Search: {screen: SearchForm},
-        SearchScreen: {screen: SearchScreen},
+        SearchList: {screen: SearchList},
         ExpandedMovie: {screen: ExpandedMovie},
     },
     {

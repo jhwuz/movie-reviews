@@ -1,19 +1,17 @@
 import React from "react";
 import {Button, StyleSheet, View, TextInput, Alert} from "react-native";
 import {Formik} from "formik";
-import SearchScreen from "./SearchScreen";
 
 export default class SearchForm extends React.Component {
     handleSubmit(values) {
         const {navigate} = this.props.navigation;
-        console.log(this.props)
         Alert.alert(
             '',
             'Press OK to view search results',
             [{
                 text: 'OK',
                 onPress: () => {
-                    navigate('SearchScreen', {title: values.movieTitle});
+                    navigate('SearchList', {title: values.movieTitle});
                 }
             }]
         );
