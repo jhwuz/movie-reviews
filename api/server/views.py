@@ -12,8 +12,7 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
     @action(methods=['post'], detail=False, url_path='search')
     def search(self, request):
-        search = self.get_queryset().filter(title__icontains=request.data.get('title'))\
-            .filter(title__startswith=request.data.get('title'))
+        search = self.get_queryset().filter(title__icontains=request.data.get('title'))
         serializer = self.get_serializer_class()(search, many=True)
         return Response(serializer.data)
 

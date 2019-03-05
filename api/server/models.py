@@ -5,7 +5,7 @@ from django.db import models
 class MovieReview(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.TextField(max_length=50)
-    rating = models.IntegerField()
+    rating = models.DecimalField(decimal_places=2, max_digits=4)
     description = models.TextField()
     # user = models.ForeignKey(User)
 
