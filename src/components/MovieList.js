@@ -16,8 +16,19 @@ export default class AlbumList extends React.Component {
       })
       .catch(function (error) {
         console.log(error);
-        this.renderMovies();
+      });
+
+    axios.get('http://localhost:8000/server/reviews/avg')
+      .then(response => {
+        this.setState({
+          avg: response.data
+        })
       })
+      .catch(function (error) {
+        console.log(error);
+      })
+    console.log(this.props)
+    this.renderMovies();
   }
 
   renderMovies() {

@@ -15,7 +15,7 @@ const MovieDetail = (props) => {
         <MovieCard>
           <Text style={styles.header}>{props.movie.title}</Text>
           <StarRating
-            rating={props.movie.rating}
+            rating={parseInt(props.movie.rating, 10)}
             fullStarColor={'#37935B'}
             emptyStarColor={'grey'}
             starSize={20}
@@ -26,7 +26,7 @@ const MovieDetail = (props) => {
             disabled={true}
           />
           <Text style={styles.description}>
-            Description: {props.movie.description}
+            {props.movie.description}
           </Text>
         </MovieCard>
       </View>
@@ -46,6 +46,11 @@ const styles = StyleSheet.create({
   description: {
     color: '#868B82',
     marginBottom: 3,
+  },
+  summary: {
+    color: 'white',
+    marginBottom: 3,
+    fontSize: 20,
   }
 
 });

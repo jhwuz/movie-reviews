@@ -1,7 +1,9 @@
 import React from 'react'
-import {ScrollView, StyleSheet} from 'react-native'
+import {ScrollView, StyleSheet, View} from 'react-native'
 import MovieDetail from './MovieDetail'
 import axios from 'axios'
+import {Text} from "react-native-elements";
+import StarRating from 'react-native-star-rating'
 
 export default class SearchList extends React.Component {
   constructor(props) {
@@ -15,7 +17,6 @@ export default class SearchList extends React.Component {
 
   componentDidMount() {
     console.log(this.props)
-    const {navigate} = this.props;
     axios.post('http://localhost:8000/server/reviews/search/',
       {
         title: this.props.navigation.getParam('title', '')
@@ -28,11 +29,22 @@ export default class SearchList extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
+
+    axios.get('http://localhost:8000/server/reviews/avg')
+      .then(response => {
+        this.setState({
+          avg: response.data
+        })
+      })
+      .catch(function (error) {
+        console.log(error);
+        this.renderMovies();
+      })
   }
 
   renderMovies() {
     return this.state.movies.map(movie =>
-      <MovieDetail key={movie.id} movie={movie}/> //pass down movie as prop
+        <MovieDetail key={movie.id} movie={movie}/>
     );
   }
 
@@ -52,5 +64,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#14171C',
     paddingLeft: 5,
     paddingRight: 5,
+  },
+  header: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: 'white',
+    marginBottom: 5,
+    textAlign: 'center'
   }
 });
